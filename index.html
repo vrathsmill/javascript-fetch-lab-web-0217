@@ -26,6 +26,8 @@
         <h3>Create Fork</h3>
         <p><a href="#" onclick="forkRepo()">Fork Repository</a></p>
         <div id="results"></div>
+
+
       </div>
       <div>
         <h3>Issues</h3>
@@ -37,14 +39,23 @@
         <div id="issues"></div>
       </div>
     </div>
+    <script src="application.js"></script>
     <script src="handlebars.js"></script>
     <script src="index.js"></script>
+
     <script id="repo-template" type="text/x-handlebars-template">
       <h3>Forked Successfully!</h3>
-      <!--fill me in with templatey goodness-->
+          {{#each this }}
+          URL: <p><a href="#">{{html_url}}</a></p>
+          Name: <p><a href="#">{{full_name}}</a></p>
+          {{/each}}
     </script>
     <script id="issues-template" type="text/x-handlebars-template">
-      <!--fill me in with templatey goodness-->
+        {{#each issue}}
+        URl: <a href="#">{{url}}</a>
+        Title: {{title}}
+        Body: {{body}}
+        {{/each}}
     </script>
   </body>
 </html>
